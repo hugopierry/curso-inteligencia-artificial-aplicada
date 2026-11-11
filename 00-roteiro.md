@@ -34,7 +34,7 @@ Arquivos: `.md` para anotações, `.ipynb` para exploração de dados e machine 
 
 - [x] IA x machine learning x deep learning
 - [ ] Aprendizado supervisionado e não supervisionado
-- [ ] Vocabulário: dados, features, modelo, treino, teste
+- [x] Vocabulário: dados, features, modelo, treino, teste
 - [ ] Onde a IA é usada
 
 **Prática:** glossário com suas palavras
@@ -43,7 +43,7 @@ Arquivos: `.md` para anotações, `.ipynb` para exploração de dados e machine 
 
 ## Módulo 2: Dados para IA (4 a 6 sessões)
 
-- [ ] Limpeza com Pandas (nulos, duplicados, tipos)
+- [x] Limpeza com Pandas (nulos, duplicados, tipos)
 - [ ] Merge e groupby
 - [ ] SQL para extrair dados
 - [ ] Estatística básica (média, mediana, desvio, correlação)
