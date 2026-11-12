@@ -86,3 +86,45 @@ IA é a simulação da inteligência humana feita por máquinas programadas pelo
 **O que são:** são os produtos finais gerados depois que os algoritmos são treinados com um conjunto de dados. O modelo é a "instância" ou a estrutura gravada que consegue fazer previsões em novos dados que nunca viu antes.
 
 **Exemplo:** o arquivo salvo em código que recebe a idade e a renda de um novo cliente e responde: "Risco de inadimplência: Baixo".
+
+---
+
+## Aplicações de IA na Logística
+
+### Previsão de Demanda
+
+- Analisa histórico de vendas, sazonalidade, clima e tendências de mercado para projetar a demanda com maior precisão.
+- Evita rupturas de estoque e reduz o excesso de produtos parados.
+
+### Otimização Inteligente de Rotas e Transporte
+
+- Algoritmos cruzam dados de tráfego em tempo real, custos de combustíveis, restrições e clima para calcular os trajetos mais econômicos.
+- Realiza reprogramações automáticas diante de imprevistos e diminui gastos com frotas (como o sistema ORION da UPS ou soluções da DHL).
+
+### Gestão de Armazéns e WMS Inteligente
+
+- Potencializa os sistemas de *Warehouse Management System* (WMS) com alocação dinâmica de produtos e organização estratégica do *picking* (separação).
+- Integra-se a robôs autônomos, sensores IoT e RFID para agilizar a movimentação e reduzir erros de inventário.
+
+### Visibilidade e Monitoramento Ponta a Ponta
+
+- Unifica dados de diferentes agentes da cadeia (transportadoras, terminais e armazéns) para rastrear cargas em tempo real.
+- Emite alertas preditivos sobre atrasos e gargalos antes que afetem o cliente final.
+
+### Automação de Decisões Operacionais
+
+- Executa tarefas repetitivas, como disparar pedidos de reposição de estoque, priorizar embarques críticos ou conferir comprovantes de entrega.
+
+**Referências:**
+- [TOTVS – Inteligência Artificial na Logística](https://www.totvs.com/blog/gestao-logistica/inteligencia-artificial-na-logistica/)
+- [Vídeo sobre IA na Logística](https://www.youtube.com/watch?v=KPhHXKQwWjQ&t=112)
+
+---
+
+### Impacto no Mercado
+
+Empresas que adotam IA na cadeia de suprimentos registram ganhos expressivos de produtividade e redução de custos operacionais (com médias de redução de custos entre 15% e 30% em grandes operadores globais).
+
+No Brasil, a tecnologia ganha força em polos de distribuição e portos que buscam integrar sistemas fragmentados.
+
+Para se aprofundar nas tendências do setor, consulte o artigo da [**TOTVS sobre Inteligência Artificial na Logística**](https://www.totvs.com/blog/gestao-logistica/inteligencia-artificial-na-logistica/).
