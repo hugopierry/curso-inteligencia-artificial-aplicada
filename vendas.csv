@@ -1,0 +1,11 @@
+id_venda,id_cliente,produto,valor_compra
+1,1,Teclado,150.00
+2,1,Mouse,80.50
+3,2,Monitor,899.90
+4,3,Headset,220.00
+5,3,Webcam,310.00
+6,3,Mouse,80.50
+7,5,Teclado,150.00
+8,6,Monitor,899.90
+9,8,Headset,220.00
+10,8,Webcam,310.00
