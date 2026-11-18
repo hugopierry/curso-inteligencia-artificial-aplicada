@@ -16,8 +16,8 @@
 
 ### 1. Coleta e estruturação de dados
 
-- [ ] Estudar conceitos e aplicações.
-- [ ] Identificar fontes e formatos de dados.
+- [X] Estudar conceitos e aplicações.
+- [X] Identificar fontes e formatos de dados.
 
 ### 2. SQL
 
@@ -34,9 +34,9 @@
 
 ### 3. Pandas
 
-- [ ] Limpeza de dados.
-- [ ] Tratamento de valores nulos e duplicados.
-- [ ] Transformação e padronização de dados.
+- [X] Limpeza de dados.
+- [X] Tratamento de valores nulos e duplicados.
+- [X] Transformação e padronização de dados.
 
 ### 4. Merge e agrupamentos
 
