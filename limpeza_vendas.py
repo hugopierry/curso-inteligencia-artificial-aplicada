@@ -7,7 +7,7 @@
 
 import pandas as pd
 
-df = pd.read_excel("vendas_sujo.ods", engine="odf")
+df = pd.read_excel(r"C:\\Users\\hugop\\OneDrive\\Desktop\\Curso Inteligência Artificial aplicada\\vendas_sujo.ods", engine="odf")
 
 # Etapa 2 — Conhecer os dados importados
 # Antes de limpar qualquer coisa, precisamos investigar o conteúdo.
@@ -63,7 +63,7 @@ print(df["valor_compra"].value_counts())
 
 print("\nRemovendo espaços")
 
-print("# Remover espaços no início e no final das células")
+print("# Alterando o tipo dos dados para string(texto)")
 df['id_cliente'] = df['id_cliente'].astype('string').str.strip()
 df['produto'] = df['produto'].astype('string').str.strip()
 df['valor_compra'] = df['valor_compra'].astype('string').str.strip()
@@ -79,6 +79,7 @@ df['valor_compra'] = df['valor_compra'].str.replace("R$", '', regex=False).str.s
 df['valor_compra'] = df['valor_compra'].str.replace(",", '.', regex=False).str.strip()
 
 
+# alterando o tipo do dado para float
 df['valor_compra'] = df['valor_compra'].astype(float)
 
 print(df['valor_compra'].dtype)
@@ -90,4 +91,43 @@ print(df[df['valor_compra'] < 0])
 df.loc[df['valor_compra'] < 0, 'valor_compra'] = 0
 print(df['valor_compra'].head(10))
 
-print("Valores negativos restantes:", (df['valor_compra']< 0).sum())
+print('##############################')
+print("Valores nulos:", df['valor_compra'].isnull().sum())
+print(df[df['valor_compra'].isnull()])
+# localiza um valor que não é número (Not a Number)
+
+df['valor_compra'] = df['valor_compra'].fillna(0)
+print(df.head(55))
+print("Valores nulos:", df['valor_compra'].isnull().sum())
+print("Valores negativos:", (df['valor_compra'] < 0).sum())
+print("Tipo de dado:", df['valor_compra'].dtype)
+
+print("análise estatística")
+print(df['valor_compra'].describe())
+print(df[df['valor_compra']== 95000])
+print(df[df['produto']== 'teclado'][['id_cliente', 'valor_compra']])
+
+print("Corrigindo erro de digitação '95000' para o valor médio de um teclado '74.00'")
+df.loc[df['valor_compra'] == 95000, 'valor_compra'] = 95.00
+print(df[df['valor_compra']== 95.00])
+
+print("Resgistro com valor 95000:", (df['valor_compra'] == 95000).sum())
+print("Resgistro com valor 95.00:", (df['valor_compra'] == 95.00).sum())
+
+
+print(df.head(56))
+# Remover registros que possuem valores nulos
+print("Revendo registros que possuem valores nulos")
+df= df.dropna()
+
+# Verificar novamente
+print(df.isnull().sum())
+
+print(df.head(60))
+
+# Padronizar ID do cliente como número inteiro
+df['id_cliente'] = pd.to_numeric(df['id_cliente']).astype(int)
+
+df.to_excel(r"C:\Users\hugop\OneDrive\Desktop\Curso Inteligência Artificial aplicada\\vendas_tratada.xlsx", index= False)
+print("✔ Arquivo tratado com sucesso!")
+input("\n\nPressione ENTER para finalizar...")
