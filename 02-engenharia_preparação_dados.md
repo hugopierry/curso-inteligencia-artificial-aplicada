@@ -16,8 +16,8 @@
 
 ### 1. Coleta e estruturação de dados
 
-- [X] Estudar conceitos e aplicações.
-- [X] Identificar fontes e formatos de dados.
+- [x] Estudar conceitos e aplicações.
+- [x] Identificar fontes e formatos de dados.
 
 ### 2. SQL
 
@@ -34,14 +34,20 @@
 
 ### 3. Pandas
 
-- [X] Limpeza de dados.
-- [X] Tratamento de valores nulos e duplicados.
-- [X] Transformação e padronização de dados.
+- [x] Limpeza de dados.
+- [x] Tratamento de valores nulos e duplicados.
+- [x] Transformação e padronização de dados.
 
 ### 4. Merge e agrupamentos
 
-- [X] Combinação de DataFrames.
-- [ ] Agrupamentos com Pandas.
+- [x] Combinação de DataFrames.
+- [x] Aplicação dos métodos INNER, LEFT, RIGHT e OUTER.
+- [x] Utilização do parâmetro indicator=True.
+- [ ] Agrupamentos com Pandas (groupby).
+
+**Registro de estudo:** prática realizada em 19/11/2026, utilizando DataFrames de produtos e estoque.
+
+**Prática complementar:** combinação de tabelas utilizando a coluna id_produto como chave de relacionamento, analisando os registros correspondentes e não correspondentes.
 
 ### 5. Estatística
 
@@ -249,6 +255,89 @@ FULL JOIN vendas
 
 ---
 
+# Prática Pandas — Combinação de DataFrames
+
+**Base de estudo:** DataFrames de Produtos e Estoque (Python e Pandas).
+
+**Data:** 19/11/2026.
+
+**Objetivo:** compreender como combinar DataFrames utilizando uma chave em comum e identificar registros correspondentes e não correspondentes.
+
+## 1. Estruturação dos DataFrames
+
+Foram criados dois DataFrames:
+
+- `produtos`: contém o identificador e o nome dos produtos.
+- `estoque`: contém o identificador dos produtos e suas respectivas quantidades.
+
+A coluna `id_produto` foi utilizada como chave de relacionamento.
+
+## 2. INNER — Registros correspondentes
+
+Retorna somente os registros que possuem correspondência nos dois DataFrames.
+
+```python
+pd.merge(produtos, estoque, on='id_produto', how='inner')
+```
+
+**Resultado:** produtos com correspondência nas duas tabelas.
+
+## 3. LEFT — Mantém o DataFrame da esquerda
+
+Retorna todos os registros de `produtos` e os dados correspondentes de `estoque`.
+
+```python
+pd.merge(produtos, estoque, on='id_produto', how='left')
+```
+
+**Resultado:** todos os produtos, inclusive aqueles sem quantidade cadastrada no estoque.
+
+## 4. RIGHT — Mantém o DataFrame da direita
+
+Retorna todos os registros de `estoque` e os dados correspondentes de `produtos`.
+
+```python
+pd.merge(produtos, estoque, on='id_produto', how='right')
+```
+
+**Resultado:** todos os registros de estoque, inclusive aqueles sem produto correspondente no cadastro.
+
+## 5. OUTER — União dos registros
+
+Retorna todos os registros dos dois DataFrames, independentemente de possuírem correspondência.
+
+```python
+pd.merge(produtos, estoque, on='id_produto', how='outer')
+```
+
+**Resultado:** todos os produtos e registros de estoque, incluindo os não correspondentes.
+
+## 6. OUTER + INDICATOR — Identificação da origem
+
+O parâmetro `indicator=True` adiciona uma coluna chamada `_merge`, que identifica a origem de cada registro.
+
+```python
+pd.merge(
+    produtos,
+    estoque,
+    on='id_produto',
+    how='outer',
+    indicator=True
+)
+```
+
+A coluna `_merge` apresenta três classificações:
+
+| Classificação | Significado |
+|---|---|
+| both | Registro encontrado nos dois DataFrames. |
+| left_only | Registro encontrado somente no DataFrame da esquerda. |
+| right_only | Registro encontrado somente no DataFrame da direita. |
+
+**Aprendizado:** o parâmetro `indicator=True` permite identificar divergências entre bases de dados, sendo útil em processos de conferência, integração e validação de informações.
+
+---
+
 ## Projeto prático
 
 **Base de dados:** Pizzaria (SQLite e Python).
@@ -265,4 +354,6 @@ FULL JOIN vendas
 
 ---
 
-**Status:** SQL revisado. Próxima etapa: aprofundar a aplicação de SQL em consultas analíticas e avançar para Pandas.
+**Status:** SQL revisado. Pandas: limpeza, transformação e combinação de DataFrames concluídas. 
+
+**Próxima etapa:** agrupamentos com Pandas (`groupby`), seguido de estatística descritiva.
