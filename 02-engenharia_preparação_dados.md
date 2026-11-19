@@ -40,7 +40,7 @@
 
 ### 4. Merge e agrupamentos
 
-- [ ] Combinação de DataFrames.
+- [X] Combinação de DataFrames.
 - [ ] Agrupamentos com Pandas.
 
 ### 5. Estatística

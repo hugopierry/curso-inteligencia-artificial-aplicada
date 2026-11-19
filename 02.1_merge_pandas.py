@@ -8,7 +8,7 @@
 # merge junta dois DataFrames usando uma coluna em comum (a chave). É o JOIN do SQL.
 # é bastante similar ao PROCV no excel
 
-from numpy import 
+
 import pandas as pd
 
 produtos = pd.DataFrame({
