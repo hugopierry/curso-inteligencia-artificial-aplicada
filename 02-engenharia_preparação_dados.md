@@ -43,7 +43,7 @@
 - [x] Combinação de DataFrames.
 - [x] Aplicação dos métodos INNER, LEFT, RIGHT e OUTER.
 - [x] Utilização do parâmetro indicator=True.
-- [ ] Agrupamentos com Pandas (groupby).
+- [x] Agrupamentos com Pandas (groupby).
 
 **Registro de estudo:** prática realizada em 19/11/2026, utilizando DataFrames de produtos e estoque.
 
